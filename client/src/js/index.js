@@ -6,6 +6,7 @@ import '../css/style.css';
 const main = document.querySelector('#main');
 main.innerHTML = '';
 
+
 const loadSpinner = () => {
   const spinner = document.createElement('div');
   spinner.classList.add('spinner');
@@ -19,6 +20,7 @@ const loadSpinner = () => {
 
 const editor = new Editor();
 
+// Here, we load the spinner that appears if the text editor isn't initialized.
 if (typeof editor === 'undefined') {
   loadSpinner();
 }
@@ -26,7 +28,7 @@ if (typeof editor === 'undefined') {
 // Check if service workers are supported
 if ('serviceWorker' in navigator) {
   // register workbox service worker
-  const workboxSW = new Workbox('/src-sw.js');
+  const workboxSW = new Workbox('../src-sw.js');
   workboxSW.register();
 } else {
   console.error('Service workers are not supported in this browser.');
