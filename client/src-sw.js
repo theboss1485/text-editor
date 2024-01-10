@@ -53,7 +53,6 @@ warmStrategyCache({
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
-// TODO: Implement asset caching
 // I took this route from the solved mini project of Module 19.
 registerRoute(
 
@@ -70,6 +69,7 @@ registerRoute(
     })
 );
 
+// I took this function from activity 25 of module 19.
 self.addEventListener('fetch', function (event) {
     // This fetch function is required for the SW to be detected and is intentionally empty
     // For a more robust, real-world SW example see: https://developers.google.com/web/fundamentals/primers/service-workers
