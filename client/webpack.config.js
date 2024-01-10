@@ -31,13 +31,16 @@ module.exports = () => {
                 name: 'Text Editor',
                 short_name: 'TE',
                 description: 'This is the Text Editor for the module 19 challenge for the OSU Flex Web Development Bootcamp.',
+                background_color: '#225ca3',
+                theme_color: '#225ca3',
                 crossorigin: 'use-credentials',
                 start_url: '/',
                 publicPath: '/',
                 icons: [
                     {
-                        src: path.resolve('./favicon.ico'),
-                        sizes: [48, 72, 96]
+                        src: path.resolve('src/images/logo.png'),
+                        sizes: [96, 128, 192, 256, 384, 512],
+                        destination: path.join('assets', 'icons'),
                     }
                 ]
             }),
@@ -56,6 +59,10 @@ module.exports = () => {
                 {
                     test: /\.css$/i,
                     use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                },
+                {
+                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    type: 'asset/resource',
                 },
                 {
                     test: /\.m?js$/,
