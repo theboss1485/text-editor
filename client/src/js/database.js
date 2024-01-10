@@ -12,7 +12,7 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
+// This method sends the text in the text editor to the database.  I took this from one of the module 19 activities.
 export const putDb = async (content) => {
     console.log('PUT to the database');
     const todosDb = await openDB('jate', 1);
@@ -23,7 +23,7 @@ export const putDb = async (content) => {
     console.log('Data saved to the database', result);
   };
 
-// TODO: Add logic for a method that gets all the content from the database
+// This method pulls the text in the database and displays it in the text editor.  I took this from one of the module 19 activities.
 export const getDb = async () => {
     console.log('GET all from the database');
     const todosDb = await openDB('jate', 1);

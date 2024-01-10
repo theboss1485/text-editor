@@ -6,6 +6,7 @@ import '../css/style.css';
 const main = document.querySelector('#main');
 main.innerHTML = '';
 
+
 const loadSpinner = () => {
   const spinner = document.createElement('div');
   spinner.classList.add('spinner');
@@ -19,6 +20,7 @@ const loadSpinner = () => {
 
 const editor = new Editor();
 
+// Here, we load the spinner that appears if the text editor isn't initialized.
 if (typeof editor === 'undefined') {
   loadSpinner();
 }

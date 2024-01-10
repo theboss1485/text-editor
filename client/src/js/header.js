@@ -1,3 +1,5 @@
+
+// This header is displayed when nothing is being stored in the database or local storage.
 const header = `
 /*
        _____  ____________

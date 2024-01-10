@@ -4,9 +4,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 const { InjectManifest, GenerateSW } = require('workbox-webpack-plugin');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
-
 module.exports = () => {
     return {
         mode: 'development',
@@ -20,6 +17,7 @@ module.exports = () => {
         },
         plugins: [
             
+            // Here, we generate an HTML file with webpack, seemingly for the dist.
             new HtmlWebpackPlugin({
                 
                 template: './index.html',
@@ -27,6 +25,7 @@ module.exports = () => {
                 favicon: './favicon.ico'
             }),
 
+            // Here, we set up configuration for the creation of the manifest.
             new WebpackPwaManifest({
                 name: 'Text Editor',
                 short_name: 'TE',
@@ -46,6 +45,8 @@ module.exports = () => {
             }),
 
             new MiniCssExtractPlugin(),
+
+            // We use InjectManifest to set up the service worker.
             new InjectManifest({
                 swSrc: './src-sw.js',
                 swDest: 'src-sw.js'
@@ -54,6 +55,7 @@ module.exports = () => {
         module: {
 
             // I took this ruleset from activity 10 of Module 18.
+            // Here, we use rules to be able to bundle images, CSS and JavaScript into the dist folder.
             rules: [
 
                 {

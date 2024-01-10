@@ -1,3 +1,5 @@
+/* This is the server file.  It  will display the index.html 
+page when the corresponding route is called.*/
 const express = require('express');
 
 const app = express();

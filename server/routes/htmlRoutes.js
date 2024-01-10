@@ -1,3 +1,4 @@
+// This file contains the route to the index.html page.
 const path = require('path');
 
 module.exports = (app) =>

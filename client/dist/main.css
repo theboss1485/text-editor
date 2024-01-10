@@ -37,6 +37,7 @@ h1 {
   padding-top: 10px;
 }
 
+/* This CSS creates a spinner if the website isn't loaded properly. */
 .loading-spinner {
   animation-duration: 0.75s;
   animation-iteration-count: infinite;
@@ -93,6 +94,9 @@ h1 {
   color: #1a1a1a;
   background-color: #aeaeae;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  /* I decided to hide the install button by default.  If the app is not currently installed, the install button will be displayed. */
+  display: none
 }
 
 .btn:hover {
@@ -192,6 +196,7 @@ h1 {
   background-color: #31a9e1;
 }
 
+/* This media query hides the install button, and favicon if the screen is a small size. */
 @media only screen and (max-width: 600px) {
   .nav-btn {
     display: none;
