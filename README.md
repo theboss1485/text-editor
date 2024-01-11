@@ -2,7 +2,7 @@
 
 ## Description
 
-My motivation to build this project was to gain an understanding of progressive web applications (PWAs).  I wanted to be able to understand service workers, caching, webpack, and also Indexed DB, and dists.  I built this project so that I could gain experience with using and coding with caching, webpack, and service workers and dists.  This project solves the problem of an employee at a company needing a simple text editing application to be able to do something like keep track of notes.  The user can even use this application if his or her internet connection goes down, since it can be installed on the desktop.  For this project, I learned how to create a PWA, I learned something about how to use service workers and caching. I took starter code that OSU gave and added to it to create this application.
+My motivation to build this project was to gain an understanding of progressive web applications (PWAs).  I wanted to be able to understand service workers, caching, webpack, Indexed DB, and dists.  I built this project so that I could gain experience with using caching, webpack, and service workers and dists, as well as Indexed DB.  This project solves the problem of an employee at a company needing a simple text editing application to be able to do something like keep track of notes.  The user can even use this application if his or her internet connection goes down, since it can be installed on the desktop.  For this project, I learned how to create a PWA, and I also learned something about how to use service workers and caching. I took starter code that OSU gave and added to it to create this application.
 
 ## Table of Contents (Optional)
 
@@ -14,7 +14,9 @@ This application has been deployed to Heroku.  To use it, you can follow the lin
 
 ## Usage
 
-To use the deployed application, please use the following link: [https://stark-sierra-04496-744a2982c68e.herokuapp.com/](https://stark-sierra-04496-744a2982c68e.herokuapp.com/).  Here is a screenshot of the application: ![A screenshot of the text editor](./assets/images/text-editor-screenshot.JPG)To use the text editor, type some text into it, and then close it.  When you open the application up again, the text will be saved there, just as you left it.  You can also install the text editor to the desktop by following the instructions in the Installation section above.  If you disconnect from the internet, the application will still function and save text properly.
+To use the deployed application, please use the following link: [https://stark-sierra-04496-744a2982c68e.herokuapp.com/](https://stark-sierra-04496-744a2982c68e.herokuapp.com/).  Here is a screenshot of the application: 
+
+![A screenshot of the text editor](./assets/images/text-editor-screenshot.JPG). To use the text editor, type some text into it, and then close it.  When you open the application up again, the text will be saved there, just as you left it.  You can also install the text editor to the desktop by following the instructions in the Installation section above.  If you disconnect from the internet, the application will still function and save text properly.
 
 ## Credits
 
