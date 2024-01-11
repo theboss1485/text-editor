@@ -13,15 +13,16 @@ const initdb = async () =>
   });
 
 // This method sends the text in the text editor to the database.  I took this from one of the module 19 activities.
-export const putDb = async (content) => {
+export const putDb = async (id, content) => {
     console.log('PUT to the database');
     const todosDb = await openDB('jate', 1);
     const tx = todosDb.transaction('jate', 'readwrite');
     const store = tx.objectStore('jate');
-    const request = store.put({text: content });
-    const result = await request;
+    const result = await store.put({id: id, text: content, });
     console.log('Data saved to the database', result);
-  };
+    return result;
+  }
+
 
 // This method pulls the text in the database and displays it in the text editor.  I took this from one of the module 19 activities.
 export const getDb = async () => {
@@ -32,7 +33,7 @@ export const getDb = async () => {
     const request = store.getAll();
     const result = await request;
     console.log('result.value', result);
-    if(typeof result !== String){
+    if (typeof result !== 'string') {
 
         return '';
     }

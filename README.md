@@ -14,11 +14,11 @@ This application has been deployed to Heroku.  To use it, you can follow the lin
 
 ## Usage
 
-To use the deployed application, please use the following link: []().  To use the text editor, type some text into it, and then close it.  When you open the application up again, the text will be saved there, just as you left it.  You can also install the text editor to the desktop by following the instructions in the Installation section above.  If you disconnect from the internet, the application will still function and save text properly.
+To use the deployed application, please use the following link: [https://stark-sierra-04496-744a2982c68e.herokuapp.com/](https://stark-sierra-04496-744a2982c68e.herokuapp.com/).  Here is a screenshot of the application: ![A screenshot of the text editor](./assets/images/text-editor-screenshot.JPG)To use the text editor, type some text into it, and then close it.  When you open the application up again, the text will be saved there, just as you left it.  You can also install the text editor to the desktop by following the instructions in the Installation section above.  If you disconnect from the internet, the application will still function and save text properly.
 
 ## Credits
 
-I used code from the activities for Module 19 in order to write the text editor.  I also used the Xpert Learning Assistant AI chatbot to help out with writing some of the code.  I used code from an internet tutorial on precaching, which can be found here: [](), in my src-sw.js file.
+I used code from the activities for Module 19 in order to write the text editor.  I also used the Xpert Learning Assistant AI chatbot to help out with writing some of the code.  I used code from an internet tutorial on precaching, which can be found here: [https://developer.chrome.com/docs/workbox/caching-resources-during-runtime](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime), in my src-sw.js file.
 
 ## License
 
