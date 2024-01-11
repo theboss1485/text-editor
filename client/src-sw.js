@@ -33,22 +33,26 @@ const STATIC_CACHE_URLS = [
 precacheAndRoute(self.__WB_MANIFEST);
 
 const pageCache = new CacheFirst({
-  cacheName: 'page-cache',
-  plugins: [
-    new CacheableResponsePlugin({
-      statuses: [0, 200],
-    }),
-    new ExpirationPlugin({
-      maxAgeSeconds: 30 * 24 * 60 * 60,
-    }),
-  ],
+    
+    cacheName: 'page-cache',
+    
+    plugins: [
+
+            new CacheableResponsePlugin({
+            statuses: [0, 200],
+        }),
+            new ExpirationPlugin({
+            maxAgeSeconds: 30 * 24 * 60 * 60,
+        }),
+    ],
 });
 
 
 
 warmStrategyCache({
-  urls: ['/index.html', '/'],
-  strategy: pageCache,
+
+    urls: ['/index.html', '/'],
+    strategy: pageCache,
 });
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
@@ -57,19 +61,23 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 registerRoute(
 
     ({ request }) => ['style', 'script', 'worker', 'image'].includes(request.destination),
-    new StaleWhileRevalidate({
-      // Name of the cache storage.
-      cacheName: 'asset-cache',
-      plugins: [
-        new CacheableResponsePlugin({
-          statuses: [0, 200],
-        }),
-      ],
+        
+        new StaleWhileRevalidate({
+
+        // Name of the cache storage.
+        cacheName: 'asset-cache',
+        plugins: [
+
+            new CacheableResponsePlugin({
+            statuses: [0, 200],
+            }),
+        ],
     })
 );
 
 // I took this function from activity 25 of module 19.
 self.addEventListener('fetch', function (event) {
+    
     // This fetch function is required for the SW to be detected and is intentionally empty
     // For a more robust, real-world SW example see: https://developers.google.com/web/fundamentals/primers/service-workers
-  });
+});

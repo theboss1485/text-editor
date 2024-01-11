@@ -4,12 +4,14 @@ import { header } from './header';
 
 export default class {
     constructor() {
+        
         const localData = localStorage.getItem('content');
 
         // This try...catch statement checks if CodeMirror is loaded.
         try{
 
             if (typeof CodeMirror === 'undefined') {
+
                 throw new Error('CodeMirror is not loaded');
             }
         } catch (error){

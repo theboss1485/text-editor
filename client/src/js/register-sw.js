@@ -3,11 +3,12 @@
 // This code registers the service worker so that it can be used.
 export const registerSW = () => {
     
-  if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator) {
       
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js');
-      });
+        window.addEventListener('load', () => {
+            
+            navigator.serviceWorker.register('/service-worker.js');
+        });
     }
-  };
+};
   

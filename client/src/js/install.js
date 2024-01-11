@@ -9,24 +9,25 @@ window.addEventListener('beforeinstallprompt', (event) => {
 
 butInstall.addEventListener('click', async () => {
   
-  const promptEvent = window.deferredPrompt;
+    const promptEvent = window.deferredPrompt;
 
-  if (!promptEvent) {
-   return;
-  }
+    if (!promptEvent) {
 
-  promptEvent.prompt();
-  
-  window.deferredPrompt = null;
-  
-  butInstall.classList.toggle('hidden', true);
+        return;
+    }
+
+    promptEvent.prompt();
+    
+    window.deferredPrompt = null;
+    
+    butInstall.classList.toggle('hidden', true);
 });
 
 // Once the app has been installed, the install button will be hidden.
 window.addEventListener('appinstalled', (event) => {
   
-  window.deferredPrompt = null;
-  butInstall.style.display = "none";
+    window.deferredPrompt = null;
+    butInstall.style.display = "none";
 }); 
 
 

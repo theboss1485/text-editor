@@ -2,19 +2,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
-const { InjectManifest, GenerateSW } = require('workbox-webpack-plugin');
+const { InjectManifest} = require('workbox-webpack-plugin');
 
 module.exports = () => {
     return {
         mode: 'development',
         entry: {
+
             main: './src/js/index.js',
             install: './src/js/install.js'
         },
         output: {
+
             filename: '[name].bundle.js',
             path: path.resolve(__dirname, 'dist'),
         },
+
         plugins: [
             
             // Here, we generate an HTML file with webpack, seemingly for the dist.
@@ -27,6 +30,7 @@ module.exports = () => {
 
             // Here, we set up configuration for the creation of the manifest.
             new WebpackPwaManifest({
+
                 name: 'Text Editor',
                 short_name: 'TE',
                 description: 'This is the Text Editor for the module 19 challenge for the OSU Flex Web Development Bootcamp.',
@@ -36,6 +40,7 @@ module.exports = () => {
                 start_url: '/',
                 publicPath: '/',
                 icons: [
+
                     {
                         src: path.resolve('src/images/logo.png'),
                         sizes: [96, 128, 192, 256, 384, 512],
@@ -48,6 +53,7 @@ module.exports = () => {
 
             // We use InjectManifest to set up the service worker.
             new InjectManifest({
+
                 swSrc: './src-sw.js',
                 swDest: 'src-sw.js'
             })
