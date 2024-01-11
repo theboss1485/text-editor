@@ -53,15 +53,14 @@ warmStrategyCache({
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
-// I took this route from the solved mini project of Module 19.
+// I took this route from the solved mini project of Module 19, with one slight modification.
 registerRoute(
 
-    ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
+    ({ request }) => ['style', 'script', 'worker', 'image'].includes(request.destination),
     new StaleWhileRevalidate({
       // Name of the cache storage.
       cacheName: 'asset-cache',
       plugins: [
-        // This plugin will cache responses with these headers to a maximum-age of 30 days
         new CacheableResponsePlugin({
           statuses: [0, 200],
         }),
